@@ -33,14 +33,17 @@ void Ship::UpdateActor(float deltaTime)
 	Vector2 pos = GetPosition();
 	pos.x += mRightSpeed * deltaTime;
 	pos.y += mDownSpeed * deltaTime;
-	// Restrict position to left half of screen
-	if (pos.x < 25.0f)
+
+	const static float fRightThreshold = 25.f;
+	const static float fLeftThreshold = 970.f;
+	// Restrict position to screen
+	if (pos.x < fRightThreshold)
 	{
-		pos.x = 25.0f;
+		pos.x = fRightThreshold;
 	}
-	else if (pos.x > 500.0f)
+	else if (pos.x > fLeftThreshold)
 	{
-		pos.x = 500.0f;
+		pos.x = fLeftThreshold;
 	}
 	if (pos.y < 25.0f)
 	{
@@ -58,20 +61,20 @@ void Ship::ProcessKeyboard(const uint8_t* state)
 	mRightSpeed = 0.0f;
 	mDownSpeed = 0.0f;
 	// right/left
-	if (state[SDL_SCANCODE_D])
+	if (state[SDL_SCANCODE_D] || state[SDL_SCANCODE_RIGHT])
 	{
 		mRightSpeed += 250.0f;
 	}
-	if (state[SDL_SCANCODE_A])
+	if (state[SDL_SCANCODE_A] || state[SDL_SCANCODE_LEFT])
 	{
 		mRightSpeed -= 250.0f;
 	}
 	// up/down
-	if (state[SDL_SCANCODE_S])
+	if (state[SDL_SCANCODE_S] || state[SDL_SCANCODE_DOWN])
 	{
 		mDownSpeed += 300.0f;
 	}
-	if (state[SDL_SCANCODE_W])
+	if (state[SDL_SCANCODE_W] || state[SDL_SCANCODE_UP])
 	{
 		mDownSpeed -= 300.0f;
 	}

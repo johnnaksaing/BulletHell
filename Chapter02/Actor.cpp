@@ -12,7 +12,7 @@
 #include <algorithm>
 
 Actor::Actor(Game* game)
-	:mState(EActive)
+	:mState(State::EActive)
 	, mPosition(Vector2::Zero)
 	, mScale(1.0f)
 	, mRotation(0.0f)
@@ -34,7 +34,7 @@ Actor::~Actor()
 
 void Actor::Update(float deltaTime)
 {
-	if (mState == EActive)
+	if (mState == State::EActive)
 	{
 		UpdateComponents(deltaTime);
 		UpdateActor(deltaTime);

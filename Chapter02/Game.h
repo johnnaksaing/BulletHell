@@ -54,4 +54,6 @@ private:
 
 	// Game-specific
 	class Ship* mShip; // Player's ship
+
+	class Enemy* mEnemy;
 };

@@ -14,6 +14,8 @@
 #include "Ship.h"
 #include "BGSpriteComponent.h"
 
+#include "Enemy.h"
+
 Game::Game()
 :mWindow(nullptr)
 ,mRenderer(nullptr)
@@ -124,7 +126,7 @@ void Game::UpdateGame()
 	std::vector<Actor*> deadActors;
 	for (auto actor : mActors)
 	{
-		if (actor->GetState() == Actor::EDead)
+		if (actor->GetState() == Actor::State::EDead)
 		{
 			deadActors.emplace_back(actor);
 		}
@@ -179,6 +181,10 @@ void Game::LoadData()
 	};
 	bg->SetBGTextures(bgtexs);
 	bg->SetScrollSpeed(-200.0f);
+
+	mEnemy = new Enemy(this);
+	mEnemy->SetPosition(Vector2(800.0f, 384.0f));
+	mEnemy->SetScale(1.f);
 }
 
 void Game::UnloadData()
