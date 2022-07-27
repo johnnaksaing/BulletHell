@@ -3,6 +3,13 @@
 #include "Math.h"
 #include "Actor.h"
 
+MoveComponent::MoveComponent(class Actor* owner, int updateOrder)
+	: Component(owner, updateOrder)
+	, mAngularSpeed(0.0f)
+	, mForwardSpeed(0.0f)
+{
+
+}
 void MoveComponent::Update(float deltaTime) 
 {
 	if (!Math::NearZero(mAngularSpeed)) 
@@ -11,10 +18,10 @@ void MoveComponent::Update(float deltaTime)
 		rot += mAngularSpeed * deltaTime;
 		mOwner->SetRotation(rot);
 	}
-	if (!Math::NearZero(mFowardSpeed)) 
+	if (!Math::NearZero(mForwardSpeed)) 
 	{
 		Vector2 rot = mOwner->GetPosition();
-		rot += mOwner->GetForward() * mFowardSpeed * deltaTime;
+		rot += mOwner->GetForward() * mForwardSpeed * deltaTime;
 		mOwner->SetPosition(rot);
 	}
 }

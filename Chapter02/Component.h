@@ -5,8 +5,8 @@
 // Released under the BSD License
 // See LICENSE in root directory for full details.
 // ----------------------------------------------------------------
-
 #pragma once
+#include "SDL/SDL.h"
 class Component
 {
 public:
@@ -19,6 +19,8 @@ public:
 	virtual void Update(float deltaTime);
 
 	int GetUpdateOrder() const { return mUpdateOrder; }
+	virtual void ProcessInput(const uint8_t* keyState) {}
+
 protected:
 	// Owning actor
 	class Actor* mOwner;

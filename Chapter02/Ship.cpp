@@ -79,3 +79,8 @@ void Ship::ProcessKeyboard(const uint8_t* state)
 		mDownSpeed -= 300.0f;
 	}
 }
+
+void Ship::ActorInput(const uint8_t* keyState) 
+{
+	ProcessKeyboard(keyState);
+}

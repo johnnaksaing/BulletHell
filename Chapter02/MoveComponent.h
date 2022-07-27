@@ -1,23 +1,23 @@
 #pragma once
 #include "Component.h"
 
-class MoveComponent : Component
+class MoveComponent : public Component
 {
 public:
-	MoveComponent(class Acotr* owner, int updateOrder = 10);
+	MoveComponent(class Actor* owner, int updateOrder = 10);
 
 	void Update(float deltaTime) override;
 
 	float GetAngularSpeed() const { return mAngularSpeed; }
-	float GetFowardSpeed() const { return mFowardSpeed; }
+	float GetFowardSpeed() const { return mForwardSpeed; }
 
 	void SetAngularSpeed(float speed) { mAngularSpeed = speed; }
-	void SetFowardSpeed(float speed) { mFowardSpeed = speed; }
+	void SetFowardSpeed(float speed) { mForwardSpeed = speed; }
 
 private:
 	//rad/s
 	float mAngularSpeed;
 
 	//unit/s
-	float mFowardSpeed;
+	float mForwardSpeed;
 };
