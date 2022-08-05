@@ -17,11 +17,11 @@ Ship::Ship(Game* game)
 	,mLaserCooldown(0.0f)
 {
 	// Create a sprite component
-	SpriteComponent* sc = new SpriteComponent(this, 150);
+	sc = new SpriteComponent(this, 150);
 	sc->SetTexture(game->GetTexture("Assets/Ship.png"));
 
 	// Create an input component and set keys/speed
-	InputComponent* ic = new InputComponent(this);
+	ic = new InputComponent(this);
 	ic->SetForwardKey(SDL_SCANCODE_W);
 	ic->SetBackKey(SDL_SCANCODE_S);
 	ic->SetClockwiseKey(SDL_SCANCODE_Z);
