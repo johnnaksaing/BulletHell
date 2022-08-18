@@ -1,18 +1,4 @@
-﻿  Actor.cpp
-  Asteroid.cpp
-  CircleComponent.cpp
-  Component.cpp
-  Game.cpp
-  InputComponent.cpp
-  Laser.cpp
-  Main.cpp
-  Math.cpp
-  MoveComponent.cpp
-  Random.cpp
-  Ship.cpp
-  SpriteComponent.cpp
-  코드를 생성하고 있습니다...
-  Game.vcxproj -> C:\Users\user\Documents\GitHub\BulletHell\Chapter03\Debug\Game.exe
+﻿  Game.vcxproj -> C:\Users\user\Documents\GitHub\BulletHell\Chapter03\Debug\Game.exe
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libfreetype-6.dll
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libogg-0.dll
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libpng16-16.dll

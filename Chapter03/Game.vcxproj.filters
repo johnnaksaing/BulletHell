@@ -84,5 +84,8 @@
     <ClInclude Include="Laser.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="AsteroidLine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
