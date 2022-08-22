@@ -30,7 +30,7 @@ public:
 	// Updates all the components attached to the actor (not overridable)
 	void UpdateComponents(float deltaTime);
 	// Any actor-specific update code (overridable)
-	virtual void UpdateActor(float deltaTime);
+	virtual void UpdateActor(float deltaTime) = 0;
 
 	// ProcessInput function called from Game (not overridable)
 	void ProcessInput(const uint8_t* keyState);

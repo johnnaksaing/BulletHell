@@ -49,9 +49,7 @@ void Actor::UpdateComponents(float deltaTime)
 	}
 }
 
-void Actor::UpdateActor(float deltaTime)
-{
-}
+//void Actor::UpdateActor(float deltaTime) {}
 
 void Actor::ProcessInput(const uint8_t* keyState)
 {

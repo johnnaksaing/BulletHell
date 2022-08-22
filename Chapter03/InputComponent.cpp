@@ -17,6 +17,7 @@ InputComponent::InputComponent(class Actor* owner)
 ,mCounterClockwiseKey(0)
 ,mLeftKey(0)
 ,mRightKey(0)
+,mResetRotateKey(0)
 {
 	
 }
@@ -56,4 +57,9 @@ void InputComponent::ProcessInput(const uint8_t* keyState)
 		angularSpeed -= mMaxAngularSpeed;
 	}
 	SetAngularSpeed(angularSpeed);
+
+	if (keyState[mResetRotateKey]) 
+	{
+		mOwner->SetRotation(0.5f * Math::Pi);
+	}
 }
