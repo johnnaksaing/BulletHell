@@ -46,9 +46,7 @@ public:
 	void SetRotation(float rotation) { mRotation = rotation; }
 
 	Vector2 GetForward() const { return Vector2(Math::Cos(mRotation), -Math::Sin(mRotation)); }
-	Vector2 GetRight() const {
-		return Vector2(Math::Sin(mRotation), Math::Cos(mRotation)); // std::cout << Math::Sin(mRotation) << ' ' << -Math::Cos(mRotation) << '\n';
-	}
+	Vector2 GetRight() const { return Vector2(Math::Sin(mRotation), Math::Cos(mRotation)); }
 
 	State GetState() const { return mState; }
 	void SetState(State state) { mState = state; }

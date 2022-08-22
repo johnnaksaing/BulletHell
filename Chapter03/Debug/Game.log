@@ -1,6 +1,6 @@
-﻿  Game.cpp
-  Ship.cpp
-  코드를 생성하고 있습니다...
+﻿  MoveComponent.cpp
+C:\Users\user\Documents\GitHub\BulletHell\Chapter03\MoveComponent.cpp(50,41): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Documents\GitHub\BulletHell\Chapter03\MoveComponent.cpp(54,41): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Game.vcxproj -> C:\Users\user\Documents\GitHub\BulletHell\Chapter03\Debug\Game.exe
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libfreetype-6.dll
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libogg-0.dll
