@@ -30,6 +30,7 @@ Ship::Ship(Game* game)
 	ic->SetLeftKey(SDL_SCANCODE_A);
 	ic->SetRightKey(SDL_SCANCODE_D);	
 	ic->SetResetRotateKey(SDL_SCANCODE_X);
+	ic->SetNormalAttackKey(SDL_SCANCODE_SPACE);
 	ic->SetMaxForwardSpeed(300.0f);
 	ic->SetMaxRightSpeed(300.0f);
 	
@@ -57,9 +58,10 @@ void Ship::UpdateActor(float deltaTime)
 	}
 }
 
+//TODO : Create WeaponComponent and its derived class "LaserWeaponComponent"
 void Ship::ActorInput(const uint8_t* keyState)
 {
-	if (keyState[SDL_SCANCODE_SPACE] && mLaserCooldown <= 0.0f)
+	if (keyState[ic->GetNormalAttackKey()] && mLaserCooldown <= 0.0f)
 	{
 		// Create a laser and set its position/rotation to mine
 		Laser* laser = new Laser(GetGame());

@@ -18,6 +18,7 @@ InputComponent::InputComponent(class Actor* owner)
 ,mLeftKey(0)
 ,mRightKey(0)
 ,mResetRotateKey(0)
+,mNormalAttackKey(0)
 {
 	
 }

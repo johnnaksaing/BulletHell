@@ -30,6 +30,7 @@ public:
 	int GetLeftKey() const { return mLeftKey; }
 	int GetRightKey() const { return mRightKey; }
 	int GetResetRotateKey() const { return mResetRotateKey; }
+	int GetNormalAttackKey() const { return mNormalAttackKey; }
 
 	void SetMaxForwardSpeed(float speed) { mMaxForwardSpeed = speed; }
 	void SetMaxRightSpeed(float speed) { mMaxRightSpeed = speed; }
@@ -43,6 +44,7 @@ public:
 	void SetRightKey(int key) { mRightKey = key; }
 
 	void SetResetRotateKey(int key) { mResetRotateKey = key; }
+	void SetNormalAttackKey(int key) { mNormalAttackKey = key; }
 private:
 	// The maximum forward/angular speeds
 	float mMaxForwardSpeed;
@@ -59,4 +61,7 @@ private:
 	int mRightKey;
 	// Key for Reset Rotation
 	int mResetRotateKey;
+
+	// Key for Normal Attack 
+	int mNormalAttackKey;
 };
