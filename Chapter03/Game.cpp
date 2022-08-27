@@ -171,6 +171,9 @@ void Game::LoadData()
 	{
 		new Asteroid(this);
 	}
+
+	mBackground = new BGActor(this);
+
 }
 
 void Game::UnloadData()

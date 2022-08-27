@@ -51,3 +51,8 @@ void Enemy::UpdateActor(float deltaTime)
 	}
 	SetPosition(pos);
 }
+
+void Enemy::ActorInput(const uint8_t* keyState) 
+{
+
+}

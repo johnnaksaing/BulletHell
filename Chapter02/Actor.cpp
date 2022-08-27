@@ -9,6 +9,7 @@
 #include "Actor.h"
 #include "Game.h"
 #include "Component.h"
+#include "BGSpriteComponent.h"
 #include <algorithm>
 
 Actor::Actor(Game* game)
@@ -80,4 +81,31 @@ void Actor::RemoveComponent(Component* component)
 	{
 		mComponents.erase(iter);
 	}
+}
+
+BGActor::BGActor(Game* game) : Actor(game)
+{
+	// Create the "far back" background
+	BGSpriteComponent* bg = new BGSpriteComponent(this);
+	bg->SetScreenSize(Vector2(1024.0f, 768.0f));
+	std::vector<SDL_Texture*> bgtexs = {
+		GetGame()->GetTexture("Assets/Farback01.png"),
+		GetGame()->GetTexture("Assets/Farback02.png")
+	};
+	bg->SetBGTextures(bgtexs);
+	bg->SetScrollSpeed(-100.0f);
+	// Create the closer background
+	bg = new BGSpriteComponent(this, 50);
+	bg->SetScreenSize(Vector2(1024.0f, 768.0f));
+	bgtexs = {
+		GetGame()->GetTexture("Assets/Stars.png"),
+		GetGame()->GetTexture("Assets/Stars.png")
+	};
+	bg->SetBGTextures(bgtexs);
+	bg->SetScrollSpeed(-200.0f);
+}
+
+void BGActor::ActorInput(const uint8_t* keyState)
+{
+	
 }

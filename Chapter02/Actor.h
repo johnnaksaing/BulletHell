@@ -68,3 +68,12 @@ private:
 	std::vector<class Component*> mComponents;
 	class Game* mGame;
 };
+
+class BGActor : public Actor 
+{
+public:
+	BGActor(class Game* game);
+	virtual ~BGActor() override;
+
+	virtual void ActorInput(const uint8_t* keyState) override;
+};

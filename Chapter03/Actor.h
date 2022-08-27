@@ -69,3 +69,13 @@ private:
 	std::vector<class Component*> mComponents;
 	class Game* mGame;
 };
+
+
+class BGActor : public Actor
+{
+public:
+	BGActor(Game* game);
+	virtual void UpdateActor(float deltaTime) override {}
+private:
+	class BGSpriteComponent* bgc;
+};

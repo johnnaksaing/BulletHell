@@ -10,6 +10,8 @@
 #include "MoveComponent.h"
 #include <cstdint>
 
+// unreal engine's inputcomponent : https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h
+
 class InputComponent : public MoveComponent
 {
 public:
