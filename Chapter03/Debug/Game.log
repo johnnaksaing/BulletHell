@@ -1,11 +1,4 @@
-﻿  Actor.cpp
-  Asteroid.cpp
-  Game.cpp
-  Laser.cpp
-  Ship.cpp
-  SpriteComponent.cpp
-  코드를 생성하고 있습니다...
-  LINK : C:\Users\user\Documents\GitHub\BulletHell\Chapter03\Debug\Game.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+﻿  Game.cpp
   Game.vcxproj -> C:\Users\user\Documents\GitHub\BulletHell\Chapter03\Debug\Game.exe
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libfreetype-6.dll
   C:\Users\user\Documents\GitHub\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libogg-0.dll

@@ -15,13 +15,13 @@
 #include "Asteroid.h"
 #include "Random.h"
 
+
 Game::Game()
 :mWindow(nullptr)
 ,mRenderer(nullptr)
 ,mIsRunning(true)
 ,mUpdatingActors(false)
 {
-	
 }
 
 bool Game::Initialize()
