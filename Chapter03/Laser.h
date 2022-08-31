@@ -15,8 +15,6 @@ public:
 
 	void UpdateActor(float deltaTime) override;
 private:
-	class SpriteComponent* sc;
-	class MoveComponent* mc;
 	class CircleComponent* mCircle;
 	float mDeathTimer;
 };
