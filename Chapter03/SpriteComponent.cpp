@@ -69,9 +69,9 @@ void BGSpriteComponent::Update(float deltaTime)
 		bg.mOffset.y += mScrollSpeed * deltaTime;
 		// If this is completely off the screen, reset offset to
 		// the right of the last bg texture
-		if (bg.mOffset.y > 1.5f * mScreenSize.y)// * .5f
+		if (bg.mOffset.y < -mScreenSize.y * .5f)
 		{
-			bg.mOffset.y = (mBGTextures.size() - 1) * -.5f * mScreenSize.y + 1;// mBGTextures.size() * mScreenSize.y;
+			bg.mOffset.y = (mBGTextures.size() - 1) * mScreenSize.y - 1;
 		}
 	}
 }
@@ -86,7 +86,7 @@ void BGSpriteComponent::Draw(SDL_Renderer* renderer)
 		r.w = static_cast<int>(mScreenSize.x);
 		r.h = static_cast<int>(mScreenSize.y);
 		// Center the rectangle around the position of the owner
-		r.x = static_cast<int>(mOwner->GetPosition().x + bg.mOffset.x - r.w / 2);
+		r.x = static_cast<int>(192);//mOwner->GetPosition().x + bg.mOffset.x - r.w / 2
 		r.y = static_cast<int>(mOwner->GetPosition().y + bg.mOffset.y - r.h / 2);
 		
 		// Draw this background
@@ -106,8 +106,8 @@ void BGSpriteComponent::SetBGTextures(const std::vector<SDL_Texture*>& textures)
 		BGTexture temp;
 		temp.mTexture = tex;
 		// Each texture is screen width in offset
-		temp.mOffset.y = -count * mScreenSize.y + mScreenSize.y * .5f;
-		temp.mOffset.x = mScreenSize.x / 2;
+		temp.mOffset.y = count * mScreenSize.y;
+		temp.mOffset.x = mScreenSize.x/2;
 		mBGTextures.emplace_back(temp);
 		count++;
 	}
