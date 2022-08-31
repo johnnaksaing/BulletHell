@@ -69,6 +69,6 @@ void Ship::ActorInput(const uint8_t* keyState)
 		laser->SetRotation(GetRotation());
 
 		// Reset laser cooldown (half second)
-		mLaserCooldown = 0.5f;
+		mLaserCooldown = 0.1f;
 	}
 }
