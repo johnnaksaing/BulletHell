@@ -13,6 +13,7 @@
 #include "Random.h"
 #include "CircleComponent.h"
 
+
 Asteroid::Asteroid(Game* game)
 	:Actor(game)
 	,mCircle(nullptr)
