@@ -11,6 +11,8 @@
 #include "SpriteComponent.h"
 #include "InputComponent.h"
 #include "CircleComponent.h"
+#include "Source/WeaponComponent.h"
+
 class Ship : public Actor
 {
 public:
@@ -24,4 +26,5 @@ private:
 	SpriteComponent* sc;
 	InputComponent* ic;
 	CircleComponent* cc;
+	WeaponComponent* wc;
 };

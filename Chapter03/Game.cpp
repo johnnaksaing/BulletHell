@@ -32,7 +32,8 @@ bool Game::Initialize()
 		return false;
 	}
 	
-	mWindow = SDL_CreateWindow("Game Programming in C++ (Chapter 3)", 100, 100, 1024, 768, 0);
+	//mWindow = SDL_CreateWindow("Game Programming in C++ (Chapter 3)", 100, 100, 1024, 768, 0);
+	mWindow = SDL_CreateWindow("Move : WASD, Rotate : ZC, RotationReset : X, Shoot : Space", 100, 100, 1024, 768, 0);
 	if (!mWindow)
 	{
 		SDL_Log("Failed to create window: %s", SDL_GetError());
@@ -160,22 +161,21 @@ void Game::GenerateOutput()
 
 void Game::LoadData()
 {
+	mBackground = new BGActor(this);
+	
 	// Create player's ship
-
 	mShip = new Ship(this);
 	mShip->SetPosition(Vector2(512.0f, 384.0f));
 	mShip->SetRotation(Math::PiOver2);
+	
+
 
 	// Create asteroids
-	const int numAsteroids = 200;
+	const int numAsteroids = 400;
 	for (int i = 0; i < numAsteroids; i++)
 	{
 		new Asteroid(this);
 	}
-
-
-	mBackground = new BGActor(this);
-
 }
 
 void Game::UnloadData()

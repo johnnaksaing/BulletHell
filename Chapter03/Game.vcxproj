@@ -24,6 +24,7 @@
     <ClCompile Include="MoveComponent.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="Source\WeaponComponent.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +40,7 @@
     <ClInclude Include="MoveComponent.h" />
     <ClInclude Include="Random.h" />
     <ClInclude Include="Ship.h" />
+    <ClInclude Include="Source\WeaponComponent.h" />
     <ClInclude Include="SpriteComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

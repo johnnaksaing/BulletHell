@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Chapter03",
-    "\\Chapter03\\Core",
-    "\\Chapter03\\Core\\Components",
-    "\\Chapter03\\Core\\Utils",
-    "\\Chapter03\\Source"
+    ""
   ],
-  "SelectedNode": "\\Chapter03\\Actor.h",
+  "SelectedNode": "\\Chapter03-windows.sln",
   "PreviewInSolutionExplorer": false
 }
