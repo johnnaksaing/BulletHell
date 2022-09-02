@@ -22,12 +22,12 @@ public:
 	void SetAngularSpeed(float speed) { mAngularSpeed = speed; }
 	void SetForwardSpeed(float speed) { mForwardSpeed = speed; }
 	void SetRightSpeed(float speed) { mRightSpeed = speed; }
+
 private:
 	// Controls rotation (radians/second)
 	float mAngularSpeed;
-	// Controls forward movement (units/second)
-	float mForwardSpeed;
-	
 	// Controls Right movement (units/second)
 	float mRightSpeed;
+	// Controls forward movement (units/second)
+	float mForwardSpeed;
 };

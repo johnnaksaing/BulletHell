@@ -12,9 +12,12 @@ class Asteroid : public Actor
 {
 public:
 	Asteroid(class Game* game);
-	~Asteroid();
-	
+	virtual ~Asteroid();
+	virtual void UpdateActor(float deltaTime) override {};
+
 	class CircleComponent* GetCircle() { return mCircle; }
 private:
 	class CircleComponent* mCircle;
+	class SpriteComponent* sc;
+	class MoveComponent* mc;
 };

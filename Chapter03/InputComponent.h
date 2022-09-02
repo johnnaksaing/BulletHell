@@ -10,6 +10,8 @@
 #include "MoveComponent.h"
 #include <cstdint>
 
+// unreal engine's inputcomponent : https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h
+
 class InputComponent : public MoveComponent
 {
 public:
@@ -22,12 +24,15 @@ public:
 	float GetMaxForward() const { return mMaxForwardSpeed; }
 	float GetMaxRight() const { return mMaxRightSpeed; }
 	float GetMaxAngular() const { return mMaxAngularSpeed; }
+
 	int GetForwardKey() const { return mForwardKey; }
 	int GetBackKey() const { return mBackKey; }
 	int GetClockwiseKey() const { return mClockwiseKey; }
 	int GetCounterClockwiseKey() const { return mCounterClockwiseKey; }
 	int GetLeftKey() const { return mLeftKey; }
 	int GetRightKey() const { return mRightKey; }
+	int GetResetRotateKey() const { return mResetRotateKey; }
+	int GetNormalAttackKey() const { return mNormalAttackKey; }
 
 	void SetMaxForwardSpeed(float speed) { mMaxForwardSpeed = speed; }
 	void SetMaxRightSpeed(float speed) { mMaxRightSpeed = speed; }
@@ -40,6 +45,8 @@ public:
 	void SetLeftKey(int key) { mLeftKey = key; }
 	void SetRightKey(int key) { mRightKey = key; }
 
+	void SetResetRotateKey(int key) { mResetRotateKey = key; }
+	void SetNormalAttackKey(int key) { mNormalAttackKey = key; }
 private:
 	// The maximum forward/angular speeds
 	float mMaxForwardSpeed;
@@ -54,4 +61,9 @@ private:
 	// Keys for left/right movement
 	int mLeftKey;
 	int mRightKey;
+	// Key for Reset Rotation
+	int mResetRotateKey;
+
+	// Key for Normal Attack 
+	int mNormalAttackKey;
 };

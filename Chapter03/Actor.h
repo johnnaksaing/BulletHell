@@ -30,7 +30,7 @@ public:
 	// Updates all the components attached to the actor (not overridable)
 	void UpdateComponents(float deltaTime);
 	// Any actor-specific update code (overridable)
-	virtual void UpdateActor(float deltaTime);
+	virtual void UpdateActor(float deltaTime) = 0;
 
 	// ProcessInput function called from Game (not overridable)
 	void ProcessInput(const uint8_t* keyState);
@@ -46,9 +46,7 @@ public:
 	void SetRotation(float rotation) { mRotation = rotation; }
 
 	Vector2 GetForward() const { return Vector2(Math::Cos(mRotation), -Math::Sin(mRotation)); }
-	Vector2 GetRight() const {
-		return Vector2(Math::Sin(mRotation), Math::Cos(mRotation)); // std::cout << Math::Sin(mRotation) << ' ' << -Math::Cos(mRotation) << '\n';
-	}
+	Vector2 GetRight() const { return Vector2(Math::Sin(mRotation), Math::Cos(mRotation)); }
 
 	State GetState() const { return mState; }
 	void SetState(State state) { mState = state; }
@@ -70,4 +68,14 @@ private:
 
 	std::vector<class Component*> mComponents;
 	class Game* mGame;
+};
+
+
+class BGActor : public Actor
+{
+public:
+	BGActor(Game* game);
+	virtual void UpdateActor(float deltaTime) override {}
+private:
+	class BGSpriteComponent* bgc;
 };

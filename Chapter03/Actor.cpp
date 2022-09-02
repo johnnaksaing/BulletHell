@@ -49,9 +49,7 @@ void Actor::UpdateComponents(float deltaTime)
 	}
 }
 
-void Actor::UpdateActor(float deltaTime)
-{
-}
+//void Actor::UpdateActor(float deltaTime) {}
 
 void Actor::ProcessInput(const uint8_t* keyState)
 {
@@ -98,4 +96,29 @@ void Actor::RemoveComponent(Component* component)
 	{
 		mComponents.erase(iter);
 	}
+}
+
+
+#include "SpriteComponent.h"
+
+BGActor::BGActor(Game* game) : Actor(game)
+{
+	// Create the "far back" background
+	bgc = new BGSpriteComponent(this);
+	bgc->SetScreenSize(Vector2(1024.0f, 768.0f));
+	std::vector<SDL_Texture*> bgtexs = {
+		GetGame()->GetTexture("Assets/Farback01.png")
+		,GetGame()->GetTexture("Assets/Farback02.png")
+	};
+	bgc->SetBGTextures(bgtexs);
+	bgc->SetScrollSpeed(100.0f);
+	// Create the closer background
+	bgc = new BGSpriteComponent(this, 99);
+	bgc->SetScreenSize(Vector2(1024.0f, 768.0f));
+	bgtexs = {
+		GetGame()->GetTexture("Assets/Stars.png")
+		,GetGame()->GetTexture("Assets/Stars.png")
+	};
+	bgc->SetBGTextures(bgtexs);
+	bgc->SetScrollSpeed(150.0f);
 }
