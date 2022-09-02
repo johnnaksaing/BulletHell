@@ -1,4 +1,5 @@
-﻿  Game.vcxproj -> C:\Folders\BulletHell\Chapter03\Debug\Game.exe
+﻿  Game.cpp
+  Game.vcxproj -> C:\Folders\BulletHell\Chapter03\Debug\Game.exe
   C:\Folders\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libfreetype-6.dll
   C:\Folders\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libogg-0.dll
   C:\Folders\BulletHell\Chapter03\\..\external\SDL\lib\win\x86\libpng16-16.dll

@@ -1,5 +1,7 @@
 #pragma once
 #include "../Component.h"
+#include "../Actor.h"
+#include "../Math.h"
 //#include "Component.h"
 #include <iostream>
 class WeaponComponent : public Component
@@ -9,8 +11,14 @@ class WeaponComponent : public Component
 
 	E_WeaponType m_WeaponType;
 	float m_WeaponCooldownTime;
+	Vector2 mOffset;
+
 public:
-	WeaponComponent(class Actor* owner) : Component(owner),m_WeaponCooldownTime(0.f) {}
+	WeaponComponent(class Actor* owner) : Component(owner), m_WeaponCooldownTime(0.f), mOffset(Vector2::Zero/*owner->GetForward() * 30.f*/) 
+	{
+		
+		//std::cout << mOffset.x << ' ' << mOffset.y << '\n';
+	}
 	
 
 	void Fire();

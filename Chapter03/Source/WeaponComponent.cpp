@@ -3,8 +3,9 @@
 
 void WeaponComponent::Fire() 
 {
+	mOffset = mOwner->GetForward() * 30.f;
 	float rot = mOwner->GetRotation();
-	Vector2 pos = mOwner->GetPosition();
+	Vector2 pos = mOwner->GetPosition() + mOffset;
 	Vector2 rht = mOwner->GetRight();
 
 	// Create a laser and set its position/rotation to mine

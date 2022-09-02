@@ -19,7 +19,8 @@ Ship::Ship(Game* game)
 {
 	// Create a sprite component
 	sc = new SpriteComponent(this, 150);
-	sc->SetTexture(game->GetTexture("Assets/Ship.png"));
+	//sc->SetTexture(game->GetTexture("Assets/Ship.png"));
+	sc->SetTexture(game->GetTexture("Assets/OSC_1.png"));
 
 	// Create an input component and set keys/speed
 	ic = new InputComponent(this);

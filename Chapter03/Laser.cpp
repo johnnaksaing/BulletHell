@@ -19,7 +19,7 @@ Laser::Laser(Game* game)
 	,mDeathTimer(1.0f)
 {
 	// Create a sprite component
-	sc = new SpriteComponent(this);
+	sc = new SpriteComponent(this,400);
 	sc->SetTexture(game->GetTexture("Assets/Laser.png"));
 
 	// Create a move component, and set a forward speed
