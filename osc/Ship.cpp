@@ -13,9 +13,12 @@
 #include "Game.h"
 #include "Laser.h"
 
+#include "Source/RifleWeaponComponent.h"
+
 Ship::Ship(Game* game)
 	:Actor(game)
-	,mLaserCooldown(0.0f)
+	, m_BulletCooldown(0.0f)
+	, m_SkillCooldown(0.0f)
 {
 	// Create a sprite component
 	sc = new SpriteComponent(this, 150);
@@ -44,13 +47,16 @@ Ship::Ship(Game* game)
 	cc = new CircleComponent(this);
 	cc->SetRadius(5.f);
 
-	wc = new WeaponComponent(this);
-	wc->SetCurrentCooldown(0.05f);
+	m_Weapon = { new RifleWeaponComponent(this) };
+	m_Weapon[0]->SetCurrentCooldown(0.05f);
+
+	m_CurrentWeapon = m_Weapon[0];
 }
 
 void Ship::UpdateActor(float deltaTime)
 {
-	mLaserCooldown += deltaTime;
+	m_BulletCooldown += deltaTime;
+	m_SkillCooldown += deltaTime;
 
 	// Do we intersect with an asteroid?
 	for (auto ast : GetGame()->GetAsteroids())
@@ -69,20 +75,23 @@ void Ship::UpdateActor(float deltaTime)
 //TODO : Create WeaponComponent and its derived class "LaserWeaponComponent"
 void Ship::ActorInput(const uint8_t* keyState)
 {
-	if (keyState[ic->GetNormalAttackKey()] && mLaserCooldown > wc->GetCurrentCooldown() )//mLaserCooldown <= 0.0f)
+	if (keyState[ic->GetNormalAttackKey()] && m_BulletCooldown > m_CurrentWeapon->GetCurrentCooldown() )//mLaserCooldown <= 0.0f)
 	{
 		// Create a laser and set its position/rotation to mine
 
-		wc->Fire();
+		m_CurrentWeapon->Fire();
 
 		// Reset laser cooldown
-		mLaserCooldown = 0.0f;
+		m_BulletCooldown = 0.0f;
 	}
 
 	//SkillKey
-	if (keyState[ic->GetSkillUsingKey()]) 
+	if (keyState[ic->GetSkillUsingKey()] && m_SkillCooldown > m_CurrentWeapon->GetSkillCooldown())
 	{
-		std::cout << "Not Implemented Yet...\n";
+		//std::cout << "Not Implemented Yet...\n";
+		m_CurrentWeapon->Skill();
+
+		m_SkillCooldown = 0.0f;
 	}
 	//SwitchKey
 	if (keyState[ic->GetWeaponSwitchingKey()]) 

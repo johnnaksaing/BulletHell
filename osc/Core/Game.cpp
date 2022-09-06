@@ -9,11 +9,11 @@
 #include "Game.h"
 #include "SDL/SDL_image.h"
 #include <algorithm>
-#include "Actor.h"
-#include "SpriteComponent.h"
-#include "Ship.h"
-#include "Asteroid.h"
-#include "Random.h"
+#include "../Actor.h"
+#include "../SpriteComponent.h"
+#include "../Ship.h"
+#include "../Asteroid.h"
+#include "../Random.h"
 
 
 Game::Game()

@@ -13,6 +13,8 @@
 #include "CircleComponent.h"
 #include "Source/WeaponComponent.h"
 
+#include <vector>
+
 class Ship : public Actor
 {
 public:
@@ -21,10 +23,12 @@ public:
 	void UpdateActor(float deltaTime) override;
 	void ActorInput(const uint8_t* keyState) override;
 private:
-	float mLaserCooldown;
+	float m_BulletCooldown;
+	float m_SkillCooldown;
 
 	SpriteComponent* sc;
 	InputComponent* ic;
 	CircleComponent* cc;
-	WeaponComponent* wc;
+	std::vector<WeaponComponent*> m_Weapon;
+	WeaponComponent* m_CurrentWeapon;
 };

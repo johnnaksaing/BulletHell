@@ -11,37 +11,39 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="AsteroidLine.cpp" />
-    <ClCompile Include="CircleComponent.cpp" />
-    <ClCompile Include="Component.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="Core\Actor.cpp" />
+    <ClCompile Include="Core\CircleComponent.cpp" />
+    <ClCompile Include="Core\Component.cpp" />
+    <ClCompile Include="Core\Game.cpp" />
+    <ClCompile Include="Core\InputComponent.cpp" />
+    <ClCompile Include="Core\MoveComponent.cpp" />
+    <ClCompile Include="Core\Random.cpp" />
+    <ClCompile Include="Core\SpriteComponent.cpp" />
     <ClCompile Include="Laser.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Math.cpp" />
-    <ClCompile Include="MoveComponent.cpp" />
-    <ClCompile Include="Random.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="Source\WeaponComponent.cpp" />
-    <ClCompile Include="SpriteComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actor.h" />
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="AsteroidLine.h" />
-    <ClInclude Include="CircleComponent.h" />
-    <ClInclude Include="Component.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="Core\Actor.h" />
+    <ClInclude Include="Core\CircleComponent.h" />
+    <ClInclude Include="Core\Component.h" />
+    <ClInclude Include="Core\Game.h" />
+    <ClInclude Include="Core\InputComponent.h" />
+    <ClInclude Include="Core\MoveComponent.h" />
+    <ClInclude Include="Core\Random.h" />
+    <ClInclude Include="Core\SpriteComponent.h" />
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Math.h" />
-    <ClInclude Include="MoveComponent.h" />
-    <ClInclude Include="Random.h" />
     <ClInclude Include="Ship.h" />
+    <ClInclude Include="Source\Enemy.h" />
+    <ClInclude Include="Source\RifleWeaponComponent.h" />
     <ClInclude Include="Source\WeaponComponent.h" />
-    <ClInclude Include="SpriteComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BC508D87-495F-4554-932D-DD68388B63CC}</ProjectGuid>

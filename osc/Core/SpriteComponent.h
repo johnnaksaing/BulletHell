@@ -10,7 +10,7 @@
 #include "Component.h"
 #include "SDL/SDL.h"
 #include <vector>
-#include "Math.h"
+#include "../Math.h"
 class SpriteComponent : public Component
 {
 public:
