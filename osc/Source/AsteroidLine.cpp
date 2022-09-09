@@ -1,5 +1,6 @@
 #pragma once
 #include "AsteroidLine.h"
+#include "Actor.h"
 #include "Game.h"
 
 AsteroidLine::AsteroidLine(class Game* game, size_t LineCount, Vector2 initialPosition, float initalRotation, Vector2 endPosition, float endRotation)
@@ -8,7 +9,8 @@ AsteroidLine::AsteroidLine(class Game* game, size_t LineCount, Vector2 initialPo
 	m_Position(initialPosition),
 	m_Rotation(initalRotation),
 	m_EndPosition(endPosition),
-	m_EndRotation(endRotation)
+	m_EndRotation(endRotation),
+	m_LerpSpeed(0.f)
 {
 	m_Astroids.resize(LineCount);
 }
@@ -20,7 +22,6 @@ AsteroidLine::~AsteroidLine()
 
 void AsteroidLine::UpdateActor(float deltaTime) 
 {
-	Actor::UpdateActor(deltaTime);
 
 	/*
 	//근데 이거 맞음?

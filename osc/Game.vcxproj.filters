@@ -22,9 +22,6 @@
     <ClCompile Include="Laser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AsteroidLine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\WeaponComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -61,6 +58,9 @@
     <ClCompile Include="Source\Enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AsteroidLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ship.h">
@@ -70,9 +70,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Laser.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AsteroidLine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\WeaponComponent.h">
@@ -109,6 +106,9 @@
       <Filter>Core Files</Filter>
     </ClInclude>
     <ClInclude Include="Math.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AsteroidLine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

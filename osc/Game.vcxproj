@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Asteroid.cpp" />
-    <ClCompile Include="AsteroidLine.cpp" />
     <ClCompile Include="Core\Actor.cpp" />
     <ClCompile Include="Core\CircleComponent.cpp" />
     <ClCompile Include="Core\Component.cpp" />
@@ -25,12 +24,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="Source\AsteroidLine.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
     <ClCompile Include="Source\WeaponComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
-    <ClInclude Include="AsteroidLine.h" />
     <ClInclude Include="Core\Actor.h" />
     <ClInclude Include="Core\CircleComponent.h" />
     <ClInclude Include="Core\Component.h" />
@@ -42,6 +41,7 @@
     <ClInclude Include="Laser.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Ship.h" />
+    <ClInclude Include="Source\AsteroidLine.h" />
     <ClInclude Include="Source\Enemy.h" />
     <ClInclude Include="Source\RifleWeaponComponent.h" />
     <ClInclude Include="Source\WeaponComponent.h" />

@@ -1,6 +1,6 @@
 #pragma once
 #include "Actor.h"
-#include "Asteroid.h"
+#include "../Asteroid.h"
 #include "MoveComponent.h"
 #include <vector>
 class AsteroidLine : public Actor
