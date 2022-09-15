@@ -14,6 +14,7 @@
 #include "../Ship.h"
 #include "../Asteroid.h"
 #include "../Random.h"
+#include "../Source/AsteroidLine.h"
 
 
 Game::Game()
@@ -170,11 +171,14 @@ void Game::LoadData()
 
 
 	// Create asteroids
-	const int numAsteroids = 500;
+	const int numAsteroids = 10;
 	for (int i = 0; i < numAsteroids; i++)
 	{
 		new Asteroid(this);
 	}
+
+
+	new AsteroidLine(this,15,Vector2(424.f,168.f),0.f,Vector2::Zero,0.f);
 }
 
 void Game::UnloadData()

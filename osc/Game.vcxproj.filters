@@ -28,9 +28,6 @@
     <ClCompile Include="Core\Game.cpp">
       <Filter>Core Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\MoveComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
@@ -60,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="Source\AsteroidLine.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\MoveComponent.cpp">
+      <Filter>Core Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,5 +111,6 @@
     <ClInclude Include="Source\AsteroidLine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Level.h" />
   </ItemGroup>
 </Project>

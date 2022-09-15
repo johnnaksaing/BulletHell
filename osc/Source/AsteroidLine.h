@@ -14,7 +14,7 @@ public:
 
 private:
 	size_t m_LineCount;
-	std::vector<class Astroid*> m_Astroids;
+	std::vector<class Asteroid*> m_Astroids;
 
 	//depends on first one..?
 	Vector2 m_Position;
@@ -26,4 +26,7 @@ private:
 
 	//interbal between line members(deltaTime)
 	float m_LerpSpeed;
+	float mNextEnemy;
+
+	size_t m_Spawned;
 };

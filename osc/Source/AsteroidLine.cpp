@@ -5,14 +5,18 @@
 
 AsteroidLine::AsteroidLine(class Game* game, size_t LineCount, Vector2 initialPosition, float initalRotation, Vector2 endPosition, float endRotation)
 	: Actor(game),
+	m_Astroids(),
 	m_LineCount(LineCount),
 	m_Position(initialPosition),
 	m_Rotation(initalRotation),
 	m_EndPosition(endPosition),
 	m_EndRotation(endRotation),
-	m_LerpSpeed(0.f)
+	m_LerpSpeed(0.5f),
+	mNextEnemy(0.5f),
+	m_Spawned(0)
 {
-	m_Astroids.resize(LineCount);
+	//m_Astroids.resize(LineCount);
+
 }
 
 AsteroidLine::~AsteroidLine()
@@ -23,17 +27,21 @@ AsteroidLine::~AsteroidLine()
 void AsteroidLine::UpdateActor(float deltaTime) 
 {
 
-	/*
-	//근데 이거 맞음?
-	if (m_Astroids.size() == m_LineCount)
-		return;
-
 	// Is it time to spawn a new enemy?
 	mNextEnemy -= deltaTime;
-	if (mNextEnemy <= 0.0f)
+	if (m_Spawned <= m_LineCount && mNextEnemy <= 0.0f)
 	{
-		new Enemy(GetGame());
-		mNextEnemy += EnemyTime;
+		m_Astroids.push_back( new Asteroid(GetGame()) );
+		m_Astroids.back()->SetPosition(m_Position);
+		m_Astroids.back()->SetRotation(m_Rotation);
+		m_Spawned++;
+		//m_Astroids.emplace_back( GetGame() );
+		mNextEnemy += m_LerpSpeed;
 	}
-	*/
+
+	for (int i = 0; i < m_Astroids.size(); i++) 
+	{
+		Asteroid* ith = m_Astroids[i];
+		ith->SetRotation(ith->GetRotation() - 0.002f);
+	}
 }
