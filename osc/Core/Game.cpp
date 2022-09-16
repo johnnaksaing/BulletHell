@@ -16,6 +16,8 @@
 #include "../Random.h"
 #include "../Source/AsteroidLine.h"
 
+#include "../Source/Enemy.h"
+
 
 Game::Game()
 :mWindow(nullptr)
@@ -179,6 +181,8 @@ void Game::LoadData()
 
 
 	new AsteroidLine(this,15,Vector2(424.f,168.f),0.f,Vector2::Zero,0.f);
+
+	new Enemy(this);
 }
 
 void Game::UnloadData()
