@@ -182,7 +182,7 @@ void Game::LoadData()
 
 	new AsteroidLine(this,15,Vector2(424.f,168.f),0.f,Vector2::Zero,0.f);
 
-	new Enemy(this);
+	mEnemies.push_back( new Enemy(this) );
 }
 
 void Game::UnloadData()

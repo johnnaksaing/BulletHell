@@ -2,6 +2,8 @@
 #include "Game.h"
 #include "../Laser.h"
 #include "../SpriteComponent.h"
+#include "CircleComponent.h"
+#include <vector>
 
 Enemy::Enemy(class Game* game)
 	: Actor(game)
@@ -9,7 +11,9 @@ Enemy::Enemy(class Game* game)
 	, mc(nullptr)
 	, sc(nullptr)
 	, attackSpeed(0.5f)
-	,innerTimer(attackSpeed)
+	, innerTimer(attackSpeed)
+	, hp(30)
+	, m_WeaponOffset(Vector2(0,20))
 {
 
 	SetPosition(Vector2(1024.f * .5f, 300.0f));
@@ -25,28 +29,46 @@ Enemy::Enemy(class Game* game)
 	mc = new MoveComponent(this);
 	mc->SetForwardSpeed(150.0f);
 
-	// Create a circle component (for collision)
-	mCircle = new CircleComponent(this);
-	mCircle->SetRadius(40.0f);
-
 	*/
+
+	// Create a circle component (for collision)
+	m_Circle = new CircleComponent(this);
+	m_Circle->SetRadius(15.0f);
 
 	//GetGame()->AddEnemy(this);
 }
 
 Enemy::~Enemy() 
 {
-	//GetGame()->RemoveEnemy(this);
+	auto iter = std::find(GetGame()->GetEnemies().begin(),
+		GetGame()->GetEnemies().end(), this);
+	if (iter != GetGame()->GetEnemies().end())
+	{
+		GetGame()->GetEnemies().erase(iter);
+	}
 }
 
 void Enemy::UpdateActor(float deltaTime)
 {
+	if (GetState() == EDead)
+		return;
+
 	innerTimer -= deltaTime;
 	if (innerTimer < 0.f) 
 	{
 		Laser* pew = new Laser(GetGame());
-		pew->SetPosition(GetPosition());
+		pew->SetPosition(GetPosition() + m_WeaponOffset);
 		pew->SetRotation(GetRotation());
 		innerTimer = attackSpeed;
+	}
+}
+
+void Enemy::Hit(int damage)
+{
+	hp -= damage;
+	if (hp < 0)
+	{
+		//GetGame()->RemoveActor(this);
+		SetState(EDead);
 	}
 }

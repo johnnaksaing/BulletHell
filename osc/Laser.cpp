@@ -12,6 +12,7 @@
 #include "Game.h"
 #include "CircleComponent.h"
 #include "Asteroid.h"
+#include "../Source/Enemy.h"
 
 
 Laser::Laser(Game* game)
@@ -53,5 +54,18 @@ void Laser::UpdateActor(float deltaTime)
 				break;
 			}
 		}
+
+		// Do we intersect with an Enemy?
+		for (auto e : GetGame()->GetEnemies()) 
+		{
+			if (Intersect(*mCircle, *(e->GetCircle()))) 
+			{
+				e->Hit(1);
+				SetState(EDead);
+				break;
+			}
+		}
+
+		// Do we intersect with player?
 	}
 }
