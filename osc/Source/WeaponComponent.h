@@ -15,12 +15,12 @@ class WeaponComponent : public Component
 
 	E_WeaponType m_WeaponType;
 	*/
-
 	float m_WeaponCooldownTime;
 	float m_SkillCooldown;
 	Vector2 m_Offset;
 
 public:
+	//static float m_WeaponSwitchingCooldownTime;
 	WeaponComponent(class Actor* owner) : Component(owner), m_WeaponCooldownTime(0.f), m_SkillCooldown(0.f), m_Offset(Vector2::Zero/*owner->GetForward() * 30.f*/)
 	{
 		//std::cout << mOffset.x << ' ' << mOffset.y << '\n';
@@ -39,3 +39,6 @@ public:
 	Vector2 GetOffset() const { return m_Offset; }
 	void SetOffset(const Vector2& offset) { m_Offset = offset; }
 };
+
+// why cant i access this in other files? should i use wpc.cpp?
+//float WeaponComponent::m_WeaponSwitchingCooldownTime = 0.7f;

@@ -26,6 +26,9 @@ private:
 	float m_BulletCooldown;
 	float m_SkillCooldown;
 
+	float m_WeaponSwitchedCooldown;
+	float m_WeaponSwitchingSpeed;
+
 	SpriteComponent* sc;
 	InputComponent* ic;
 	CircleComponent* cc;

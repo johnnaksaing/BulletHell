@@ -9,6 +9,7 @@ class RifleWeaponComponent : public WeaponComponent
 public:
 	RifleWeaponComponent(class Actor* owner) : WeaponComponent(owner) 
 	{
+		SetCurrentCooldown(0.1f);
 		SetSkilCooldown(0.5f);
 	}
 
@@ -44,3 +45,46 @@ void RifleWeaponComponent::Skill()
 	std::cout << "Rifle\n";
 }
 
+
+
+class PistolWeaponComponent : public WeaponComponent
+{
+public:
+	PistolWeaponComponent(class Actor* owner) : WeaponComponent(owner)
+	{
+		SetCurrentCooldown(0.05f);
+		SetSkilCooldown(0.7f);
+	}
+
+	void Fire() override;
+	void Skill() override;
+};
+
+
+void PistolWeaponComponent::Fire()
+{
+	SetOffset(mOwner->GetForward() * 30.f);//m_Offset = 
+	float rot = mOwner->GetRotation();
+	Vector2 pos = mOwner->GetPosition() + GetOffset();
+	Vector2 rht = mOwner->GetRight();
+
+	// Create a laser and set its position/rotation to mine
+	Laser* laser = new Laser(mOwner->GetGame());//(mOwner->GetGame());
+	laser->SetPosition(pos);//- rht * 8.f);
+	laser->SetRotation(rot);
+
+	/*
+	laser = new Laser(mOwner->GetGame());//(mOwner->GetGame());
+	laser->SetPosition(pos + rht * 8.f);
+	laser->SetRotation(rot);
+
+	std::shared_ptr<Laser> pew = std::make_shared<Laser>(mOwner->GetGame());
+	pew->SetPosition(pos + rht * 8.f);
+	pew->SetRotation(rot);
+	*/
+}
+
+void PistolWeaponComponent::Skill()
+{
+	std::cout << "Pistol\n";
+}

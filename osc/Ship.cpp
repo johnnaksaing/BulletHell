@@ -19,6 +19,8 @@ Ship::Ship(Game* game)
 	:Actor(game)
 	, m_BulletCooldown(0.0f)
 	, m_SkillCooldown(0.0f)
+	, m_WeaponSwitchedCooldown(0.0f)
+	, m_WeaponSwitchingSpeed(0.7f)
 {
 	// Create a sprite component
 	sc = new SpriteComponent(this, 150);
@@ -47,8 +49,8 @@ Ship::Ship(Game* game)
 	cc = new CircleComponent(this);
 	cc->SetRadius(5.f);
 
-	m_Weapon = { new RifleWeaponComponent(this) };
-	m_Weapon[0]->SetCurrentCooldown(0.05f);
+	m_Weapon = { new RifleWeaponComponent(this), new PistolWeaponComponent(this) };
+	//m_Weapon[0]->SetCurrentCooldown(0.1f);
 
 	m_CurrentWeapon = m_Weapon[0];
 }
@@ -70,6 +72,8 @@ void Ship::UpdateActor(float deltaTime)
 			break;
 		}
 	}
+
+	m_WeaponSwitchedCooldown += deltaTime;
 }
 
 //TODO : Create WeaponComponent and its derived class "LaserWeaponComponent"
@@ -96,6 +100,21 @@ void Ship::ActorInput(const uint8_t* keyState)
 	//SwitchKey
 	if (keyState[ic->GetWeaponSwitchingKey()]) 
 	{
-		std::cout << "Not Implemented Yet...\n";
+		if (m_WeaponSwitchedCooldown < m_WeaponSwitchingSpeed)
+			return;
+
+		m_WeaponSwitchedCooldown = 0.0f;
+
+		size_t WeaponIdx = 0;
+		for (; WeaponIdx < m_Weapon.size(); WeaponIdx++) 
+		{
+			if (m_CurrentWeapon == m_Weapon[WeaponIdx]) 
+			{
+				WeaponIdx = (WeaponIdx + 1) % m_Weapon.size();
+				m_CurrentWeapon = m_Weapon[WeaponIdx];
+			}
+		}
+		//std::cout << "Not Implemented Yet...\n";
+		std::cout << "Weapon Switched\n";
 	}
 }
