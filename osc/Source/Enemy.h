@@ -17,7 +17,7 @@ private:
 	class SpriteComponent* sc;
 	class MoveComponent* mc;
 
-	Vector2 m_WeaponOffset;
+	//Vector2 m_WeaponOffset;
 
 	float attackSpeed;
 	float innerTimer;

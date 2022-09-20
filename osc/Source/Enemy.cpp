@@ -13,7 +13,7 @@ Enemy::Enemy(class Game* game)
 	, attackSpeed(0.5f)
 	, innerTimer(attackSpeed)
 	, hp(30)
-	, m_WeaponOffset(Vector2(0,20))
+	//, m_WeaponOffset(Vector2(0,20))
 {
 
 	SetPosition(Vector2(1024.f * .5f, 300.0f));
@@ -57,7 +57,7 @@ void Enemy::UpdateActor(float deltaTime)
 	if (innerTimer < 0.f) 
 	{
 		Laser* pew = new Laser(GetGame());
-		pew->SetPosition(GetPosition() + m_WeaponOffset);
+		pew->SetPosition(GetPosition() + GetForward() * 30.f);
 		pew->SetRotation(GetRotation());
 		innerTimer = attackSpeed;
 	}
