@@ -111,6 +111,8 @@
     <ClInclude Include="Source\AsteroidLine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Level.h" />
+    <ClInclude Include="Core\Level.h">
+      <Filter>Core Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

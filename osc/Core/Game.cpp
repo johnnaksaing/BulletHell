@@ -17,6 +17,7 @@
 #include "../Source/AsteroidLine.h"
 
 #include "../Source/Enemy.h"
+#include "Level.h"
 
 
 Game::Game()
@@ -164,11 +165,12 @@ void Game::GenerateOutput()
 
 void Game::LoadData()
 {
+
 	mBackground = new BGActor(this);
 	
 	// Create player's ship
 	mShip = new Ship(this);
-	mShip->SetPosition(Vector2(512.0f, 384.0f));
+	mShip->SetPosition(Vector2(256.0f, 512.0f));
 	mShip->SetRotation(Math::PiOver2);
 
 
@@ -182,7 +184,19 @@ void Game::LoadData()
 
 	new AsteroidLine(this,15,Vector2(424.f,168.f),0.f,Vector2::Zero,0.f);
 
-	mEnemies.push_back( new Enemy(this) );
+	Enemy* e0 = new Enemy(this);
+	
+	e0->SetPosition(Vector2(1024.f * .5f, 300.0f));
+	e0->SetRotation(-Math::Pi * .5f);
+
+	Enemy* e1 = new Enemy(this);
+
+	e0->SetPosition(Vector2(1024.f * .75f, 400.0f));
+	e0->SetRotation(-Math::Pi * .5f);
+
+	mEnemies = { e0,e1 };
+	
+	//mEnemies.push_back( e2 );
 }
 
 void Game::UnloadData()

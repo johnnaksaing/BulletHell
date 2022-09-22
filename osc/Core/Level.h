@@ -7,13 +7,17 @@
 class Level 
 {
 public:
-	Level();
+	Level(class Game* game);
 	~Level();
 
 	void AddActor(class Actor* AddingActor);
 	std::vector<class Actor*> GetActors() const; 
-
+	void Update(float deltaTime);
 private:
 	std::vector<class Actor*> m_Actors;
+	std::vector<std::pair<float, class Actor*>> m_ActorSpawner;
 
+	Vector2 m_playerStart;
+
+	class Tile** m_Tiles;
 };
