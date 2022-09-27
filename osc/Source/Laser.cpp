@@ -12,7 +12,7 @@
 #include "Game.h"
 #include "CircleComponent.h"
 #include "Asteroid.h"
-#include "Enemy.h"
+#include "../Source/Enemy.h"
 
 
 Laser::Laser(Game* game)

@@ -11,7 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="Core\Level.cpp" />
+    <ClCompile Include="Source\Asteroid.cpp" />
     <ClCompile Include="Core\Actor.cpp" />
     <ClCompile Include="Core\CircleComponent.cpp" />
     <ClCompile Include="Core\Component.cpp" />
@@ -20,16 +21,16 @@
     <ClCompile Include="Core\MoveComponent.cpp" />
     <ClCompile Include="Core\Random.cpp" />
     <ClCompile Include="Core\SpriteComponent.cpp" />
-    <ClCompile Include="Laser.cpp" />
+    <ClCompile Include="Source\Laser.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Math.cpp" />
-    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="Source\Ship.cpp" />
     <ClCompile Include="Source\AsteroidLine.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
     <ClCompile Include="Source\WeaponComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="Source\Asteroid.h" />
     <ClInclude Include="Core\Actor.h" />
     <ClInclude Include="Core\CircleComponent.h" />
     <ClInclude Include="Core\Component.h" />
@@ -38,9 +39,9 @@
     <ClInclude Include="Core\MoveComponent.h" />
     <ClInclude Include="Core\Random.h" />
     <ClInclude Include="Core\SpriteComponent.h" />
-    <ClInclude Include="Laser.h" />
+    <ClInclude Include="Source\Laser.h" />
     <ClInclude Include="Math.h" />
-    <ClInclude Include="Ship.h" />
+    <ClInclude Include="Source\Ship.h" />
     <ClInclude Include="Source\AsteroidLine.h" />
     <ClInclude Include="Source\Enemy.h" />
     <ClInclude Include="Core\Level.h" />

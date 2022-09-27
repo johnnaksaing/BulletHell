@@ -13,13 +13,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Ship.cpp">
+    <ClCompile Include="Source\Ship.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Asteroid.cpp">
+    <ClCompile Include="Source\Asteroid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Laser.cpp">
+    <ClCompile Include="Source\Laser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\WeaponComponent.cpp">
@@ -61,15 +61,18 @@
     <ClCompile Include="Core\MoveComponent.cpp">
       <Filter>Core Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ship.h">
+    <ClInclude Include="Source\Ship.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Asteroid.h">
+    <ClInclude Include="Source\Asteroid.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Laser.h">
+    <ClInclude Include="Source\Laser.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\WeaponComponent.h">

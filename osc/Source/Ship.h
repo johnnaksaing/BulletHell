@@ -11,7 +11,7 @@
 #include "SpriteComponent.h"
 #include "InputComponent.h"
 #include "CircleComponent.h"
-#include "Source/WeaponComponent.h"
+#include "WeaponComponent.h"
 
 #include <vector>
 

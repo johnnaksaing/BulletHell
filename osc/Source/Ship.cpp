@@ -13,7 +13,7 @@
 #include "Game.h"
 #include "Laser.h"
 
-#include "Source/RifleWeaponComponent.h"
+#include "RifleWeaponComponent.h"
 
 Ship::Ship(Game* game)
 	:Actor(game)
