@@ -1,20 +1,26 @@
+
 # BulletHell Shooting Game with in-house Game Engine
 
 **picture here**
 
 ## what is this project?
-
+- A 2D space shooter game
 - Bullethell Shoot'em up game using original engine
 - Using open-source Image Library "SDL2"
+- Currently supports Windows
 - Engine code in /Core/ directory
 
+## Language & Library
+This project is written in C++, the de-facto standard language in game programming & gaming industry.
+This project intentionally excludes the use of commercial engines(I.E, Unity or UE4/5) to learn the internal structure and workflow of the engine. Instead, this project uses self-made original engine using open-source library, SDL, which is designed in consideration of re-usability of other projects.
   
 ## Things to add
 ### Engine
  - memory control using **smart pointer**
- - JSONized level file & its file I/O in engine code
+ - JSONized or XMLized level file & its file I/O in engine code
  - UI
  - audio
+ - solution-generating batch file(using CMake or premake or sth..)
  
 ### Source : additional game content
  - bullet & enemy patterns
@@ -38,13 +44,15 @@
 
 ## How to Play
 
-- TBD
-
+- TBD(includes .exe file or installer)
 
 ## Core Structure of Engine
 - UML here
 
 - instructions of each /Core/ classes here
+### 1. /core/
+### 2. /source/
+
 
 ## Engine Workflow
 - top-down diagram here
@@ -52,3 +60,5 @@
 
 ## Source 
 - TBD
+
+## Reference of Contributors
