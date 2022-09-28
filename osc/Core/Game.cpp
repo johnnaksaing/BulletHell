@@ -6,18 +6,18 @@
 // See LICENSE in root directory for full details.
 // ----------------------------------------------------------------
 
-#include "Game.h"
-#include "SDL/SDL_image.h"
 #include <algorithm>
-#include "../Actor.h"
-#include "../SpriteComponent.h"
-#include "../Ship.h"
-#include "../Asteroid.h"
-#include "../Random.h"
+#include "SDL/SDL_image.h"
+#include "Game.h"
+#include "Actor.h"
+#include "Random.h"
+#include "SpriteComponent.h"
+#include "../Source/Ship.h"
+#include "../Source/Asteroid.h"
 #include "../Source/AsteroidLine.h"
 
 #include "../Source/Enemy.h"
-#include "Level.h"
+//#include "Level.h"
 
 
 Game::Game()

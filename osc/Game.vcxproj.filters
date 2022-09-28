@@ -61,7 +61,7 @@
     <ClCompile Include="Core\MoveComponent.cpp">
       <Filter>Core Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Level.cpp">
+    <ClCompile Include="Source\Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -114,8 +114,8 @@
     <ClInclude Include="Source\AsteroidLine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Level.h">
-      <Filter>Core Files</Filter>
+    <ClInclude Include="Source\Level.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

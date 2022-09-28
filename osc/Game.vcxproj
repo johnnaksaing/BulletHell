@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Core\Level.cpp" />
+    <ClCompile Include="Source\Level.cpp" />
     <ClCompile Include="Source\Asteroid.cpp" />
     <ClCompile Include="Core\Actor.cpp" />
     <ClCompile Include="Core\CircleComponent.cpp" />
@@ -44,7 +44,7 @@
     <ClInclude Include="Source\Ship.h" />
     <ClInclude Include="Source\AsteroidLine.h" />
     <ClInclude Include="Source\Enemy.h" />
-    <ClInclude Include="Core\Level.h" />
+    <ClInclude Include="Source\Level.h" />
     <ClInclude Include="Source\RifleWeaponComponent.h" />
     <ClInclude Include="Source\WeaponComponent.h" />
   </ItemGroup>

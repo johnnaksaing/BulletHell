@@ -29,4 +29,7 @@ private:
 	float mNextEnemy;
 
 	size_t m_Spawned;
+
+	Vector2 m_MoveSpeed;
+	float m_RotateSpeed;
 };

@@ -13,7 +13,9 @@ AsteroidLine::AsteroidLine(class Game* game, size_t LineCount, Vector2 initialPo
 	m_EndRotation(endRotation),
 	m_LerpSpeed(0.5f),
 	mNextEnemy(0.5f),
-	m_Spawned(0)
+	m_Spawned(0),
+	m_MoveSpeed( (endPosition - initialPosition) * m_LerpSpeed ),
+	m_RotateSpeed(0.002f)
 {
 	//m_Astroids.resize(LineCount);
 
@@ -42,6 +44,6 @@ void AsteroidLine::UpdateActor(float deltaTime)
 	for (int i = 0; i < m_Astroids.size(); i++) 
 	{
 		Asteroid* ith = m_Astroids[i];
-		ith->SetRotation(ith->GetRotation() - 0.002f);
+		ith->SetRotation(ith->GetRotation() + m_RotateSpeed);
 	}
 }
