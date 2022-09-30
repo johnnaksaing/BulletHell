@@ -44,7 +44,7 @@ void MoveComponent::Update(float deltaTime)
 	}
 
 	// (Screen wrapping code only for asteroids)
-	if (pos.x < 0.0f * 10.f) 
+	if (pos.x < 0.0f - 10.f) 
 	{
 		//pos.x = 1022.0f; 
 		mOwner->SetRotation(0.5 * Math::TwoPi - mOwner->GetRotation());

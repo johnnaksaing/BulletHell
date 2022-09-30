@@ -5,7 +5,6 @@
 #include <algorithm>
 Level::Level(Game* game) :
 	m_Game(game),
-	m_Tiles(nullptr),
 	m_spwnerIdx(0)
 {
 	//테스트 시 여기에 spwanwer 등록

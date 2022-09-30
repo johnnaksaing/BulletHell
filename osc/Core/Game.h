@@ -28,6 +28,7 @@ public:
 	
 	SDL_Texture* GetTexture(const std::string& fileName);
 
+	// TODO : move to level.h?
 	// Game-specific (add/remove asteroid)
 	void AddAsteroid(class Asteroid* ast);
 	void RemoveAsteroid(class Asteroid* ast);

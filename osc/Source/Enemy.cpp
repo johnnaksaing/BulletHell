@@ -53,6 +53,8 @@ void Enemy::UpdateActor(float deltaTime)
 	if (GetState() == EDead)
 		return;
 
+	//TODO : move this to new file : EnemyWeaponComponent
+
 	innerTimer -= deltaTime;
 	if (innerTimer < 0.f) 
 	{
