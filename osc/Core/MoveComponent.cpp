@@ -14,6 +14,8 @@ MoveComponent::MoveComponent(class Actor* owner, int updateOrder)
 ,mAngularSpeed(0.0f)
 ,mForwardSpeed(0.0f)
 ,mRightSpeed(0.0f)
+,screenX(owner->GetGame()->screenX)
+,screenY(owner->GetGame()->screenY)
 {
 	
 }
@@ -41,32 +43,6 @@ void MoveComponent::Update(float deltaTime)
 		pos_right += mOwner->GetRight() * mRightSpeed * deltaTime;
 
 		pos += pos_right;
-	}
-
-	// (Screen wrapping code only for asteroids)
-	if (pos.x < 0.0f - 10.f) 
-	{
-		//pos.x = 1022.0f; 
-		mOwner->SetRotation(0.5 * Math::TwoPi - mOwner->GetRotation());
-		pos.x += 15.f;
-	}
-	else if (pos.x > 1024.0f + 10.f) 
-	{
-		mOwner->SetRotation(0.5 * Math::TwoPi - mOwner->GetRotation());
-		pos.x -= 15.f;
-	}
-
-	if (pos.y < 0.0f - 10.f) 
-	{
-		mOwner->SetRotation(-mOwner->GetRotation());
-
-		pos.y += 15.;
-	}
-	else if (pos.y > 768.0f + 10.f)
-	{
-		mOwner->SetRotation(-mOwner->GetRotation());
-
-		pos.y -= 15.f;
 	}
 
 	mOwner->SetPosition(pos);

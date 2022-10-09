@@ -74,6 +74,27 @@ void Ship::UpdateActor(float deltaTime)
 	}
 
 	m_WeaponSwitchedCooldown += deltaTime;
+
+	// (Screen wrapping)
+	Vector2 pos = this->GetPosition();
+	if (pos.x < 0.0f - 10.f)
+	{
+		pos.x += 10.f;
+	}
+	else if (pos.x > GetGame()->screenX + 10.f)
+	{
+		pos.x -= 10.f;
+	}
+
+	if (pos.y < 0.0f - 10.f)
+	{
+		pos.y += 10.f;
+	}
+	else if (pos.y > GetGame()->screenY + 10.f)
+	{
+		pos.y -= 10.f;
+	}
+	this->SetPosition(pos);
 }
 
 //TODO : Create WeaponComponent and its derived class "LaserWeaponComponent"

@@ -13,7 +13,7 @@ class Asteroid : public Actor
 public:
 	Asteroid(class Game* game);
 	virtual ~Asteroid();
-	virtual void UpdateActor(float deltaTime) override {};
+	virtual void UpdateActor(float deltaTime) override;
 
 	class CircleComponent* GetCircle() { return mCircle; }
 private:

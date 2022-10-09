@@ -19,7 +19,7 @@ Asteroid::Asteroid(Game* game)
 {
 	// Initialize to random position/orientation
 	Vector2 randPos = Random::GetVector(
-		Vector2::Zero, Vector2(1024.f, 192.0f)//,Vector2::Zero,512.0f,384
+		Vector2::Zero, Vector2(game->screenX, game->screenY * .25f)//,Vector2::Zero,512.0f,384
 		//Vector2(1024.0f, 768.0f));
 	);
 	SetPosition(randPos);
@@ -44,5 +44,37 @@ Asteroid::Asteroid(Game* game)
 
 Asteroid::~Asteroid()
 {
+	//Level로 고쳐야겠지?
 	GetGame()->RemoveAsteroid(this);
+}
+
+void Asteroid::UpdateActor(float deltaTime) 
+{
+	Vector2 pos = this->GetPosition();
+	// (Screen wrapping code only for asteroids)
+	if (pos.x < 0.0f - 10.f)
+	{
+		//pos.x = 1022.0f; 
+		this->SetRotation(0.5 * Math::TwoPi - this->GetRotation());
+		pos.x += 15.f;
+	}
+	else if (pos.x > GetGame()->screenX + 10.f)
+	{
+		this->SetRotation(0.5 * Math::TwoPi - this->GetRotation());
+		pos.x -= 15.f;
+	}
+
+	if (pos.y < 0.0f - 10.f)
+	{
+		this->SetRotation(-this->GetRotation());
+
+		pos.y += 15.f;
+	}
+	else if (pos.y > GetGame()->screenY + 10.f)
+	{
+		this->SetRotation(-this->GetRotation());
+
+		pos.y -= 15.f;
+	}
+	this->SetPosition(pos);
 }

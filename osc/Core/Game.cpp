@@ -25,6 +25,8 @@ Game::Game()
 ,mRenderer(nullptr)
 ,mIsRunning(true)
 ,mUpdatingActors(false)
+,screenX(1024)
+,screenY(768)
 {
 }
 
@@ -37,7 +39,7 @@ bool Game::Initialize()
 	}
 	
 	//mWindow = SDL_CreateWindow("Game Programming in C++ (Chapter 3)", 100, 100, 1024, 768, 0);
-	mWindow = SDL_CreateWindow("Move : WASD, Rotate : ZC, RotationReset : X, Shoot : Space", 100, 100, 1024, 768, 0);
+	mWindow = SDL_CreateWindow("Move : WASD, Rotate : ZC, RotationReset : X, Shoot : Space", 100, 100, screenX, screenY, 0);
 	if (!mWindow)
 	{
 		SDL_Log("Failed to create window: %s", SDL_GetError());

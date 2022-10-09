@@ -34,6 +34,9 @@ public:
 	void RemoveAsteroid(class Asteroid* ast);
 	std::vector<class Asteroid*>& GetAsteroids() { return mAsteroids; }
 	std::vector<class Enemy*>& GetEnemies() { return mEnemies; }
+
+	const int screenX;// = 1024;
+	const int screenY;// = 768;
 private:
 	void ProcessInput();
 	void UpdateGame();

@@ -8,7 +8,9 @@
 
 #pragma once
 #include "Component.h"
-
+#include "Game.h"
+#include "Actor.h"
+#include "../Math.h"
 class MoveComponent : public Component
 {
 public:
@@ -24,10 +26,21 @@ public:
 	void SetRightSpeed(float speed) { mRightSpeed = speed; }
 
 private:
+
+	const int screenX, screenY;
+
 	// Controls rotation (radians/second)
 	float mAngularSpeed;
 	// Controls Right movement (units/second)
 	float mRightSpeed;
 	// Controls forward movement (units/second)
 	float mForwardSpeed;
+
+	bool bOutofBounds()
+	{
+		Vector2 ownerPosition = this->mOwner->GetPosition();
+
+		return !(0 <= ownerPosition.x && 0 <= ownerPosition.y &&
+			ownerPosition.x <= this->mOwner->GetGame()->screenX && ownerPosition.y <= this->mOwner->GetGame()->screenY);
+	}
 };
