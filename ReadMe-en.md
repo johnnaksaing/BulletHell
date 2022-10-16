@@ -1,7 +1,8 @@
 
 # BulletHell Shooting Game with in-house Game Engine
 
-**picture here**
+![**picture here**](oscMainPic.png)
+
 
 ## what is this project?
 - A 2D space shooter game
