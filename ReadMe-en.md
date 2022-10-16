@@ -1,5 +1,5 @@
 
-# BulletHell Shooting Game with in-house Game Engine
+# Project OSC : A BulletHell Shooting Game with in-house Game Engine
 
 ![**picture here**](oscMainPic.png)
 
