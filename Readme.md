@@ -1,4 +1,5 @@
 
+  
 # Project OSC : A BulletHell Shooting Game with in-house Game Engine
 
 ![**picture here**](oscMainPic.png)
@@ -45,6 +46,7 @@ This project intentionally excludes the use of commercial engines(I.E, Unity or 
 
 ## How to Play
 
+- Now : Launch OSC.sln and Ctrl+F5 to build&run.
 - TBD(includes .exe file or installer)
 
 ## Core Structure of Engine
