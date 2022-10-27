@@ -64,6 +64,9 @@
     <ClCompile Include="Source\Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Ship.h">
@@ -117,5 +120,6 @@
     <ClInclude Include="Source\Level.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Font.h" />
   </ItemGroup>
 </Project>

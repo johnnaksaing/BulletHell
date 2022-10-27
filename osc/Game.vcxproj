@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Font.cpp" />
     <ClCompile Include="Source\Level.cpp" />
     <ClCompile Include="Source\Asteroid.cpp" />
     <ClCompile Include="Core\Actor.cpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="Source\WeaponComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Font.h" />
     <ClInclude Include="Source\Asteroid.h" />
     <ClInclude Include="Core\Actor.h" />
     <ClInclude Include="Core\CircleComponent.h" />
