@@ -1,5 +1,6 @@
 #include "Font.h"
-#include "SDL/SDL_ttf.h"
+#include "SDL/SDL.h"
+//#include "SDL/SDL_ttf.h"
 #include <vector>
 
 bool Font::Load(const std::string& fileName) 
@@ -14,8 +15,8 @@ bool Font::Load(const std::string& fileName)
 	for (int i = 0; i < fontSizes.size(); i++)
 	{
 		int size = fontSizes[i];
-		TTF_Font* font = TTF_OpenFont(fileName.c_str(),size);
-
+		//TTF_Font* font = TTF_OpenFont(fileName.c_str(),size);
+		TTF_Font* font = nullptr;
 		if (font == nullptr) 
 		{
 			SDL_Log("Font Log Failed to load font %s in size %d", fileName.c_str(),size);
