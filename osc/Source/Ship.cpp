@@ -60,6 +60,7 @@ void Ship::UpdateActor(float deltaTime)
 	m_BulletCooldown += deltaTime;
 	m_SkillCooldown += deltaTime;
 
+	//TODO : fast collision detection : its in book.
 	// Do we intersect with an asteroid?
 	for (auto ast : GetGame()->GetAsteroids())
 	{
