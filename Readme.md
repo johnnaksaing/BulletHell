@@ -54,7 +54,9 @@ This project intentionally excludes the use of commercial engines(I.E, Unity or 
 
 - instructions of each /Core/ classes here
 ### 1. /core/
+some core stuff like game/actors/components etc.
 ### 2. /source/
+contents specialized to this game.
 
 
 ## Engine Workflow
