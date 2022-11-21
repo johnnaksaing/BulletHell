@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include "../Math.h"
-//#include "SDL/SDL_ttf.h"
+#include "SDL/SDL_ttf.h"
 //https://infoarts.tistory.com/59
 
 class Font 

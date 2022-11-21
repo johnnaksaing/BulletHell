@@ -15,6 +15,8 @@ bool Font::Load(const std::string& fileName)
 	for (int i = 0; i < fontSizes.size(); i++)
 	{
 		int size = fontSizes[i];
+		//https://stackoverflow.com/questions/51805249/c-error-c2440-initializing-cannot-convert-from-class-name-to-same-class
+		//https://github.com/Microsoft/vscode-cpptools/issues/3212
 		//TTF_Font* font = TTF_OpenFont(fileName.c_str(),size);
 		TTF_Font* font = nullptr;
 		if (font == nullptr) 
