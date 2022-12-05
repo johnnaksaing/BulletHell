@@ -1,7 +1,19 @@
+#pragma once
 #include "Font.h"
-#include "SDL/SDL.h"
-//#include "SDL/SDL_ttf.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
 #include <vector>
+
+Font::Font(class Game* game) :m_Game(game)
+{
+
+}
+
+Font::~Font()
+{
+
+}
+	
 
 bool Font::Load(const std::string& fileName) 
 {
@@ -17,8 +29,8 @@ bool Font::Load(const std::string& fileName)
 		int size = fontSizes[i];
 		//https://stackoverflow.com/questions/51805249/c-error-c2440-initializing-cannot-convert-from-class-name-to-same-class
 		//https://github.com/Microsoft/vscode-cpptools/issues/3212
-		//TTF_Font* font = TTF_OpenFont(fileName.c_str(),size);
-		TTF_Font* font = nullptr;
+		TTF_Font* font = TTF_OpenFont(fileName.c_str(), size);
+		//TTF_Font* font = nullptr;
 		if (font == nullptr) 
 		{
 			SDL_Log("Font Log Failed to load font %s in size %d", fileName.c_str(),size);
@@ -29,4 +41,12 @@ bool Font::Load(const std::string& fileName)
 	} 
 
 	return true;
+}
+
+void Font::Unload()
+{
+	for (auto& font : m_FontData)
+	{
+		TTF_CloseFont(font.second);
+	}
 }

@@ -3,17 +3,18 @@
 #include <unordered_map>
 #include "../Math.h"
 #include "SDL/SDL_ttf.h"
+#include "Game.h"
 //https://infoarts.tistory.com/59
 
 class Font 
 {
 public:
-	Font();
+	Font(class Game* game);
 	~Font();
 
 	//파일로부터 폰트를 로드/언로드
 	bool Load(const std::string& fileName);
-	void UnLoad();
+	void Unload();
 
 	//해당 폰트와 문자열로 텍스쳐에 그리기
 	class Texture* RenderText(
@@ -23,6 +24,6 @@ public:
 	);
 
 private:
-	std::unordered_map<int, class TTF_Font*> m_FontData;
-
+	std::unordered_map<int, TTF_Font*> m_FontData;
+	class Game* m_Game;
 };
