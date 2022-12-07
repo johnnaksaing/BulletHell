@@ -184,7 +184,7 @@ void Game::LoadData()
 	}
 
 
-	new AsteroidLine(this,15,Vector2(424.f,168.f),0.f,Vector2::Zero,0.f);
+	//new AsteroidLine(this,15,Vector2(424.f,168.f),0.f,Vector2::Zero,0.f);
 
 	Enemy* e0 = new Enemy(this);
 	
