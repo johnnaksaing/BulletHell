@@ -1,8 +1,10 @@
+#pragma once
 #include "Enemy.h"
 #include "Game.h"
 #include "../Laser.h"
 #include "../SpriteComponent.h"
 #include "CircleComponent.h"
+#include "WeaponComponent.h"
 #include <vector>
 
 Enemy::Enemy(class Game* game)
@@ -10,6 +12,7 @@ Enemy::Enemy(class Game* game)
 	, m_Circle(nullptr)
 	, mc(nullptr)
 	, sc(nullptr)
+	, wc(nullptr)
 	, attackSpeed(0.5f)
 	, innerTimer(attackSpeed)
 	, hp(30)
@@ -30,6 +33,7 @@ Enemy::Enemy(class Game* game)
 	mc->SetForwardSpeed(150.0f);
 
 	*/
+	wc = new RifleWeaponComponent(this);
 
 	// Create a circle component (for collision)
 	m_Circle = new CircleComponent(this);
@@ -58,9 +62,12 @@ void Enemy::UpdateActor(float deltaTime)
 	innerTimer -= deltaTime;
 	if (innerTimer < 0.f) 
 	{
+		
 		Laser* pew = new Laser(GetGame());
 		pew->SetPosition(GetPosition() + GetForward() * 30.f);
 		pew->SetRotation(GetRotation());
+		
+		wc->Fire();
 		innerTimer = attackSpeed;
 	}
 }

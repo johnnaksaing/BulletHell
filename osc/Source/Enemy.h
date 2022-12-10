@@ -19,6 +19,8 @@ private:
 
 	//Vector2 m_WeaponOffset;
 
+	class WeaponComponent* wc;
+
 	float attackSpeed;
 	float innerTimer;
 

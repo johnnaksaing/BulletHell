@@ -42,3 +42,31 @@ public:
 
 // why cant i access this in other files? should i use wpc.cpp?
 //float WeaponComponent::m_WeaponSwitchingCooldownTime = 0.7f;
+
+class RifleWeaponComponent : public WeaponComponent
+{
+public:
+	RifleWeaponComponent(class Actor* owner) : WeaponComponent(owner)
+	{
+		SetCurrentCooldown(0.1f);
+		SetSkilCooldown(0.5f);
+	}
+
+	void Fire() override;
+	void Skill() override;
+};
+
+
+
+class PistolWeaponComponent : public WeaponComponent
+{
+public:
+	PistolWeaponComponent(class Actor* owner) : WeaponComponent(owner)
+	{
+		SetCurrentCooldown(0.05f);
+		SetSkilCooldown(0.7f);
+	}
+
+	void Fire() override;
+	void Skill() override;
+};

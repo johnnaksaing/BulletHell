@@ -81,9 +81,6 @@
     <ClInclude Include="Source\WeaponComponent.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\RifleWeaponComponent.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Enemy.h">
       <Filter>Source Files</Filter>
     </ClInclude>

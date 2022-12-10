@@ -47,7 +47,6 @@
     <ClInclude Include="Source\AsteroidLine.h" />
     <ClInclude Include="Source\Enemy.h" />
     <ClInclude Include="Source\Level.h" />
-    <ClInclude Include="Source\RifleWeaponComponent.h" />
     <ClInclude Include="Source\WeaponComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
