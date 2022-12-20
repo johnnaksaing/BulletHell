@@ -41,6 +41,7 @@
     <ClInclude Include="Core\MoveComponent.h" />
     <ClInclude Include="Core\Random.h" />
     <ClInclude Include="Core\SpriteComponent.h" />
+    <ClInclude Include="Source\EnemyMoveComponent.h" />
     <ClInclude Include="Source\Laser.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Source\Ship.h" />

@@ -118,5 +118,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Font.h" />
+    <ClInclude Include="Source\EnemyMoveComponent.h" />
   </ItemGroup>
 </Project>

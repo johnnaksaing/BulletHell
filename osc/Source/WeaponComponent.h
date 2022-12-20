@@ -25,7 +25,6 @@ public:
 	{
 		//std::cout << mOffset.x << ' ' << mOffset.y << '\n';
 	}
-	
 
 	virtual void Fire() = 0;
 	virtual void Skill() = 0;
