@@ -31,7 +31,8 @@ This project intentionally excludes the use of commercial engines(I.E, Unity or 
  - level design
 - UI
 
-
+### DX?
+[Tutorial Link](https://learn.microsoft.com/ko-kr/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game)
 
 ## Game Framework Details
 
