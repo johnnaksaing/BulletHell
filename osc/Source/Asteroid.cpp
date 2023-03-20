@@ -50,6 +50,8 @@ Asteroid::~Asteroid()
 
 void Asteroid::UpdateActor(float deltaTime) 
 {
+	static const int screenX = GetGame()->screenX;
+	static const int screenY = GetGame()->screenY;
 	Vector2 pos = this->GetPosition();
 	// (Screen wrapping code only for asteroids)
 	if (pos.x < 0.0f - 10.f)
@@ -58,7 +60,7 @@ void Asteroid::UpdateActor(float deltaTime)
 		this->SetRotation(0.5 * Math::TwoPi - this->GetRotation());
 		pos.x += 15.f;
 	}
-	else if (pos.x > GetGame()->screenX + 10.f)
+	else if (pos.x > screenX + 10.f)
 	{
 		this->SetRotation(0.5 * Math::TwoPi - this->GetRotation());
 		pos.x -= 15.f;
@@ -70,7 +72,7 @@ void Asteroid::UpdateActor(float deltaTime)
 
 		pos.y += 15.f;
 	}
-	else if (pos.y > GetGame()->screenY + 10.f)
+	else if (pos.y > screenY + 10.f)
 	{
 		this->SetRotation(-this->GetRotation());
 
